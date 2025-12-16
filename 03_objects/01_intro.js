@@ -3,7 +3,7 @@
 //object literals
 //Object.create  //constructor
 // q :- declare a symbol and use it in objects
-const mysym=Symbol("key1")
+ const mysym=Symbol("key1")
 const js_user={
     name:"Maria", // name is internallly string
     "Full name": "Maria Khan",
@@ -15,12 +15,12 @@ const js_user={
     isLoggedIn:false,
     lastLoginDays:["Monday","Saturday"]
 }
-// console.log(js_user.email); // full name cannot be accessed like this
-// console.log(js_user["email"]) //this is better 
-console.log( js_user[mysym])
-js_user.email="markahn@gmail.com"  //changing values of object
-Object.freeze(js_user) //to prevent changing of values
-console.log(js_user)
+// // console.log(js_user.email); // full name cannot be accessed like this
+// // console.log(js_user["email"]) //this is better 
+// console.log( js_user[mysym])
+// js_user.email="markahn@gmail.com"  //changing values of object
+ //Object.freeze(js_user) //to prevent changing of values
+// console.log(js_user)
 /* {
   name: 'Maria',
   'Full name': 'Maria Khan',
@@ -31,3 +31,13 @@ console.log(js_user)
   lastLoginDays: [ 'Monday', 'Saturday' ],
   [Symbol(key1)]: 'mykey1'
 } */
+
+//function
+js_user.greeting=function(){
+  console.log("Hello My Name is Maria Khan");
+}
+console.log(js_user.greeting())
+js_user.greeting2=function(){
+  console.log(`Hello JS user,${this.name}`)
+}
+console.log(js_user.greeting2())
