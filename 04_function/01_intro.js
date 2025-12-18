@@ -22,3 +22,5 @@ function loginUserMessage(username="sam"){ //default values
 }
 //console.log(loginUserMessage("maria,"))
 console.log(loginUserMessage()) //please enter username // undefined
+
+function a
