@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relations in DOM</title>
+</head>
+<body style="background-color: black;">
+    <h1 style="color: aliceblue;">Name Of Days</h1>
+    <div class="parent">
+        <div style="color: aliceblue;" class="day">Monday</div>
+        <div style="color: aliceblue;" class="day">Tuesday</div>
+        <div style="color: aliceblue;" class="day">Wednesday</div>
+        <div style="color: aliceblue;" class="day">Thursdayday</div>
+        <div style="color: aliceblue;" class="day">Friday</div>
+        <div style="color: aliceblue;" class="day">Saturday</div>
+        <div style="color: aliceblue;" class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    const parent=document.querySelector('.parent')
+    console.log(parent.children[1].innerHTML) //html collection
+    for(let i=0;i<parent.children.length;i++){
+        console.log(parent.children[i].innerHTML);
+        
+    }
+    parent.children[2].style.color="orange"
+    console.log("NODES:",parent.childNodes)
+</script>
+</html>
