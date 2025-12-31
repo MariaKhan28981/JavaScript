@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body><ul id="images">
+    <li><img src="Picture3.png" alt="image 1" id="one" width="200"></li>
+    <li><img src="Screenshot 2025-12-15 222525.png" id="two" alt="image 2" width="200"><li/>
+    <li><img src="Screenshot 2025-12-13 130758.png" id="three" alt="image 3" width="200"></li>
+    <li><img src="Screenshot 2025-12-11 194125.png" id="four" alt="image 4" width="200"></li>
+    <li><img src="Screenshot 2025-12-11 192547.png" id="five" alt="image 5" width="200"></li>
+    
+</ul>
+</body>
+
+<script>
+    //attachEvent()
+    //jQuery-on
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clickeeed");
+        
+    })
+    document.getElementById('one').onclick=function(){
+        alert("first image")
+    }
+    document.getElementById('two').addEventListener('click',function(){
+        alert("second image")
+    })
+    
+    document.getElementById('three').addEventListener('click',function(e){
+        console.log(e);
+        
+    })
+   //document.getElementById('images').addEventListener('click',function(e){
+    //     // console.log("clickeeed");
+        
+// })
+    document.getElementById('four').addEventListener('click',function(e){
+        console.log("fourth image");
+        e.stopPropagation()
+        
+    })
+
+</script>
+
+</html>
