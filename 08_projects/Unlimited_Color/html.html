@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Color</title>
+</head>
+<body>
+    <h1>Click on Start to see the Magic!</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+<script>
+    let value;
+    
+    const random_color=function(){
+        const hex='0123456789ABCDEF'
+        let color='#'
+        for(let i=0;i<6;i++){
+            color+=hex[Math.floor(Math.random()*16)]
+        }
+        return color;
+    }
+
+    const start_changinglor=function(){
+        value=setInterval(StartchangeColor,2000)
+        function StartchangeColor(){
+            document.body.style.backgroundColor=random()
+        }
+    }
+    const StopChangingColor=function(){
+        clearInterval(value)
+    }
+    document.querySelector('#start').
+    addEventListener('click',changeColor)
+
+    document.querySelector('#stop').
+    addEventListener('click',StopChangingColor)
+</script>
+</html>
