@@ -22,19 +22,23 @@
         return color;
     }
 
-    const start_changinglor=function(){
-        value=setInterval(StartchangeColor,2000)
-        function StartchangeColor(){
-            document.body.style.backgroundColor=random()
+    const start_changing_color=function(){
+        if(!value){
+            value=setInterval(change_bg_color,2000)
+        }
+        
+        function change_bg_color(){
+            document.body.style.backgroundColor=random_color()
         }
     }
-    const StopChangingColor=function(){
+    const stop_changing_color=function(){
         clearInterval(value)
+        value=null
     }
     document.querySelector('#start').
-    addEventListener('click',changeColor)
+    addEventListener('click',start_changing_color)
 
     document.querySelector('#stop').
-    addEventListener('click',StopChangingColor)
+    addEventListener('click',stop_changing_color)
 </script>
 </html>

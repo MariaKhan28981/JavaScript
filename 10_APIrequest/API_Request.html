@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API</h1>
+    <script>
+        const XHR=new XMLHttpRequest()
+        const requestURL='https://api.github.com/users/MariaKhan28981'
+        XHR.open('GET',requestURL)
+       XHR.onreadystatechange=function(){
+        console.log(XHR.readyState);
+        if(XHR.readyState==4){
+            console.log(this.responseText);
+            
+        }
+       }
+        XHR.send()
+    </script>
+    
+</body>
+</html>
