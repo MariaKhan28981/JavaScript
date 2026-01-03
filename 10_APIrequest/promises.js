@@ -4,7 +4,7 @@ const promise1=new Promise(function(resolve,reject){
     //setTimeout
     setTimeout(function(){
         console.log("async task is complete");
-        resolve() //connected to this
+        resolve() //connected to .this
         
     },1000)
 })
@@ -51,3 +51,46 @@ promise4
 .catch(function(error){
     console.log(error)
 })
+.finally(()=>console.log("completed")) //always executed
+
+const promise5=new Promise(function(resolve,reject){
+        setTimeout(function(){
+        let error=true
+        if(!error){
+            resolve({username:"JavaScript",password:"123"})
+        }else{
+            reject("ERROR: JS went wrong")
+        }
+    },1000)
+})
+async function consumePromise5(){
+    try{
+        const response=await promise5
+        console.log(response)
+    }catch(error){
+        console.log(error)
+    }
+    //const response=await promise5
+    //console.log(response)
+}
+consumePromise5()
+
+// async function getAllUsers() {
+//    try{
+//     const response=await fetch('https://jsonplaceholder.typicode.com/users')
+//    const data=await response.json()
+//    console.log(data)
+//    }catch(error){
+//     console.log("Error",error)
+//    }
+// }
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json()
+})
+.then((data)=>{
+    console.log(data)
+})
+.catch((error)=>console.log(error))
